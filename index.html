@@ -1,515 +1,627 @@
-```html
 <!DOCTYPE html>
 <html lang="zh-TW">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>王俊騰｜宸浚企業社｜太陽能熱水器</title>
+<meta charset="UTF-8">
 
-  <meta name="description"
-        content="王俊騰｜宸浚企業社｜太陽能熱水器安裝、維修、保養、免費諮詢。">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-  <!-- LINE LIFF SDK -->
-  <script charset="utf-8"
-    src="https://static.line-scdn.net/liff/edge/2/sdk.js">
-  </script>
+<title>王俊騰｜宸浚企業社｜電子名片</title>
 
-  <style>
+<!-- LINE LIFF SDK -->
+<script
+  charset="utf-8"
+  src="https://static.line-scdn.net/liff/edge/2/sdk.js">
+</script>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
 
-    body {
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Noto Sans TC",
-        "Microsoft JhengHei",
+<style>
+
+/* =========================================================
+   基本設定
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    background: #eeeeee;
+
+    font-family:
         Arial,
+        "Microsoft JhengHei",
+        "Noto Sans TC",
         sans-serif;
 
-      background:
-        linear-gradient(
-          180deg,
-          #eaf7ff 0%,
-          #f7fbfd 45%,
-          #ffffff 100%
-        );
+    color: #000000;
 
-      color: #222;
-      line-height: 1.6;
+}
+
+
+/* =========================================================
+   主畫面
+========================================================= */
+
+.page {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   HERO
+   對應 Flex hero
+
+   aspectRatio = 60:11
+   size = full
+   aspectMode = cover
+========================================================= */
+
+.hero {
+
+    width: 100%;
+
+    aspect-ratio: 60 / 11;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+}
+
+.hero img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.body {
+
+    width: 100%;
+
+    background: #ffffff;
+
+}
+
+
+/* =========================================================
+   姓名
+
+   Flex:
+   borderWidth: bold
+   height: 100px
+========================================================= */
+
+.name-box {
+
+    width: 100%;
+
+    height: 100px;
+
+    border: 3px solid #000000;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+.name {
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    color: #000000;
+
+    text-align: center;
+
+    line-height: 1;
+
+    transform:
+        translateY(8px);
+
+}
+
+
+/* =========================================================
+   公司資訊
+
+   Flex:
+   backgroundColor #CCEEFF
+   borderWidth 10px
+   cornerRadius md
+========================================================= */
+
+.company-box {
+
+    width: 100%;
+
+    background: #CCEEFF;
+
+    border: 10px solid #CCEEFF;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   公司 Logo + 公司名稱
+
+   Flex:
+   horizontal
+   height 30px
+========================================================= */
+
+.company-header {
+
+    height: 30px;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+}
+
+
+/* Logo */
+
+.company-logo {
+
+    width: 45px;
+
+    height: 30px;
+
+    object-fit: contain;
+
+    object-position: left center;
+
+}
+
+
+/* 公司名稱 */
+
+.company-name {
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    line-height: 30px;
+
+    margin-left: 0;
+
+    transform:
+        translateX(-8px);
+
+}
+
+
+/* =========================================================
+   分隔線
+
+   Flex:
+   height 20px
+   separator margin md
+   color #FFFFFF
+========================================================= */
+
+.separator-box {
+
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.separator {
+
+    width: 100%;
+
+    height: 1px;
+
+    background: #FFFFFF;
+
+}
+
+
+/* =========================================================
+   電話
+
+   第一、第二：
+   height 30px
+
+   第三：
+   height 20px
+========================================================= */
+
+.phone-box {
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+}
+
+.phone-box.phone-1 {
+
+    height: 30px;
+
+}
+
+.phone-box.phone-2 {
+
+    height: 30px;
+
+}
+
+.phone-box.phone-3 {
+
+    height: 20px;
+
+}
+
+
+.phone {
+
+    color: #000000;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    line-height: 1;
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   聯絡按鈕
+
+   Flex:
+   horizontal
+   spacing md
+========================================================= */
+
+.button-area {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-top: 8px;
+
+    padding-bottom: 10px;
+
+}
+
+
+/* =========================================================
+   Button
+
+   Flex primary
+========================================================= */
+
+.action-button {
+
+    flex: 1;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+}
+
+
+/* 原本：
+
+   加 LINE 聯繫
+   color #0044BB
+*/
+
+.line-button {
+
+    background: #0044BB;
+
+}
+
+
+/* 原本：
+
+   官方網站
+   color #003C9D
+*/
+
+.website-button {
+
+    background: #003C9D;
+
+}
+
+
+/* =========================================================
+   FOOTER
+
+   Flex:
+   horizontal
+   height 60px
+   spacing xs
+========================================================= */
+
+.footer {
+
+    width: 100%;
+
+    height: 60px;
+
+    border-top: 1px solid #DDDDDD;
+
+    background: #ffffff;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   Facebook
+
+   原本 width 約由 box 決定
+========================================================= */
+
+.facebook-area {
+
+    width: 25%;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    padding-top: 5px;
+
+}
+
+
+/* Facebook 圖片 */
+
+.facebook {
+
+    width: 32px;
+
+    height: 32px;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================================
+   分享
+
+   原本：
+   image + text
+========================================================= */
+
+.share-area {
+
+    width: 30%;
+
+    height: 60px;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    transform:
+        translateX(-5px);
+
+}
+
+
+.share-icon {
+
+    width: 22px;
+
+    height: 22px;
+
+    object-fit: contain;
+
+}
+
+
+.share-text {
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    color: #000000;
+
+}
+
+
+/* =========================================================
+   SUNCUE Logo
+
+   原本：
+   width 120px
+========================================================= */
+
+.suncue-area {
+
+    width: 120px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    margin-left: auto;
+
+    padding-top: 0;
+
+    padding-right: 10px;
+
+}
+
+
+.suncue-logo {
+
+    width: 120px;
+
+    max-width: 120px;
+
+    height: auto;
+
+    max-height: 50px;
+
+    object-fit: contain;
+
+    object-position: center top;
+
+}
+
+
+/* =========================================================
+   手機尺寸
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .name {
+
+        font-size: 30px;
+
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    .phone {
 
-    /* =========================
-       主容器
-    ========================= */
-
-    .container {
-      width: 100%;
-      max-width: 520px;
-      margin: auto;
-      padding-bottom: 40px;
-    }
-
-    /* =========================
-       頂部 Hero
-    ========================= */
-
-    .hero {
-      background:
-        linear-gradient(
-          135deg,
-          #0066cc,
-          #00a8e8
-        );
-
-      color: white;
-      text-align: center;
-
-      padding: 35px 20px 30px;
-
-      border-radius:
-        0 0 30px 30px;
-
-      box-shadow:
-        0 8px 25px rgba(0,0,0,0.12);
-    }
-
-    .hero-logo {
-      width: 100%;
-      max-width: 420px;
-      height: 85px;
-
-      object-fit: contain;
-
-      background: white;
-
-      border-radius: 15px;
-
-      padding: 10px;
-
-      margin-bottom: 20px;
-    }
-
-    .avatar {
-      width: 90px;
-      height: 90px;
-
-      margin: auto;
-
-      border-radius: 50%;
-
-      background: white;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 45px;
-
-      box-shadow:
-        0 5px 20px rgba(0,0,0,0.15);
-    }
-
-    .hero h1 {
-      font-size: 30px;
-      margin-top: 15px;
-      font-weight: 700;
-    }
-
-    .hero .company {
-      font-size: 18px;
-      margin-top: 5px;
-      opacity: 0.95;
-    }
-
-    .hero .position {
-      font-size: 15px;
-      margin-top: 8px;
-      opacity: 0.9;
-    }
-
-    /* =========================
-       Card
-    ========================= */
-
-    .card {
-      background: white;
-
-      margin:
-        18px 15px 0;
-
-      padding: 22px;
-
-      border-radius: 20px;
-
-      box-shadow:
-        0 5px 20px rgba(0,0,0,0.07);
-    }
-
-    .card-title {
-      font-size: 20px;
-      font-weight: bold;
-
-      margin-bottom: 15px;
-
-      color: #005bab;
-    }
-
-    /* =========================
-       聯絡資訊
-    ========================= */
-
-    .contact-item {
-      display: flex;
-
-      align-items: center;
-
-      padding: 13px 0;
-
-      border-bottom:
-        1px solid #eeeeee;
-    }
-
-    .contact-item:last-child {
-      border-bottom: none;
-    }
-
-    .contact-icon {
-      width: 42px;
-      height: 42px;
-
-      border-radius: 50%;
-
-      background: #eaf6ff;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 20px;
-
-      margin-right: 12px;
-    }
-
-    .contact-text {
-      flex: 1;
-    }
-
-    .contact-label {
-      font-size: 12px;
-      color: #888;
-    }
-
-    .contact-value {
-      font-size: 16px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    /* =========================
-       按鈕
-    ========================= */
-
-    .button-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 12px;
-    }
-
-    .btn {
-      min-height: 55px;
-
-      border-radius: 14px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      text-align: center;
-
-      font-weight: bold;
-
-      color: white;
-
-      transition: 0.2s;
-
-      padding: 10px;
-    }
-
-    .btn:active {
-      transform: scale(0.96);
-    }
-
-    .btn-line {
-      background: #06c755;
-    }
-
-    .btn-phone {
-      background: #333333;
-    }
-
-    .btn-website {
-      background: #0066cc;
-    }
-
-    .btn-share {
-      background: #ff9800;
-    }
-
-    .btn-facebook {
-      background: #1877f2;
-    }
-
-    .btn-estimate {
-      background: #e65100;
-    }
-
-    /* =========================
-       服務
-    ========================= */
-
-    .services {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 12px;
-    }
-
-    .service {
-      background: #f5faff;
-
-      border-radius: 15px;
-
-      padding: 18px 10px;
-
-      text-align: center;
-
-      border:
-        1px solid #e1f0fa;
-    }
-
-    .service-icon {
-      font-size: 32px;
-
-      margin-bottom: 5px;
-    }
-
-    .service-title {
-      font-weight: bold;
-
-      color: #005bab;
-    }
-
-    .service-text {
-      font-size: 13px;
-
-      color: #666;
-
-      margin-top: 3px;
-    }
-
-    /* =========================
-       公司介紹
-    ========================= */
-
-    .about {
-      font-size: 15px;
-
-      color: #555;
-    }
-
-    .about strong {
-      color: #005bab;
-    }
-
-    /* =========================
-       案例
-    ========================= */
-
-    .case {
-      margin-bottom: 15px;
-
-      overflow: hidden;
-
-      border-radius: 15px;
-
-      background: #f5f5f5;
-    }
-
-    .case img {
-      width: 100%;
-
-      height: 190px;
-
-      object-fit: cover;
-
-      display: block;
-    }
-
-    .case-content {
-      padding: 12px 15px;
-    }
-
-    .case-title {
-      font-weight: bold;
-
-      color: #333;
-    }
-
-    .case-description {
-      font-size: 13px;
-
-      color: #777;
-
-      margin-top: 3px;
-    }
-
-    /* =========================
-       分享區
-    ========================= */
-
-    .share-box {
-      text-align: center;
-
-      background:
-        linear-gradient(
-          135deg,
-          #fff8e1,
-          #fff3cd
-        );
-    }
-
-    .share-title {
-      font-size: 19px;
-
-      font-weight: bold;
-
-      color: #e65100;
-
-      margin-bottom: 8px;
-    }
-
-    .share-text {
-      font-size: 14px;
-
-      color: #666;
-
-      margin-bottom: 15px;
-    }
-
-    /* =========================
-       Footer
-    ========================= */
-
-    footer {
-      text-align: center;
-
-      color: #888;
-
-      font-size: 12px;
-
-      padding:
-        25px 15px 80px;
-    }
-
-    /* =========================
-       固定底部工具列
-    ========================= */
-
-    .bottom-bar {
-      position: fixed;
-
-      left: 0;
-      right: 0;
-      bottom: 0;
-
-      background: rgba(255,255,255,0.96);
-
-      backdrop-filter: blur(10px);
-
-      border-top:
-        1px solid #ddd;
-
-      padding:
-        8px 10px;
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 8px;
-
-      z-index: 999;
-    }
-
-    .bottom-btn {
-      height: 45px;
-
-      border-radius: 10px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      font-weight: bold;
-
-      font-size: 14px;
-
-      color: white;
-    }
-
-    .bottom-line {
-      background: #06c755;
-    }
-
-    .bottom-phone {
-      background: #333;
-    }
-
-    .bottom-share {
-      background: #ff9800;
-    }
-
-    /* =========================
-       手機
-    ========================= */
-
-    @media (max-width: 380px) {
-
-      .hero h1 {
-        font-size: 26px;
-      }
-
-      .button-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .services {
-        grid-template-columns: 1fr 1fr;
-      }
+        font-size: 14px;
 
     }
 
-  </style>
+    .company-name {
+
+        font-size: 15px;
+
+    }
+
+    .action-button {
+
+        font-size: 13px;
+
+    }
+
+}
+
+
+/* =========================================================
+   防止手機點擊出現奇怪反白
+========================================================= */
+
+* {
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+}
+
+</style>
 
 </head>
 
@@ -517,485 +629,261 @@
 <body>
 
 
-<div class="container">
+<div class="page">
 
 
-  <!-- =========================
-       個人資訊
-  ========================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-  <section class="hero">
+<div class="hero">
 
-    <!-- SUNCUE Logo -->
     <img
-      class="hero-logo"
-      src="https://i.ibb.co/zWpPKR2w/SUNCUE.png"
-      alt="SUNCUE">
-
-    <div class="avatar">
-      ☀️
-    </div>
-
-    <h1>王俊騰</h1>
-
-    <div class="company">
-      宸浚企業社
-    </div>
-
-    <div class="position">
-      太陽能熱水器專業服務
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       聯絡資訊
-  ========================= -->
-
-  <section class="card">
-
-    <div class="card-title">
-      📇 聯絡資訊
-    </div>
-
-
-    <a
-      class="contact-item"
-      href="tel:0988102039">
-
-      <div class="contact-icon">
-        📱
-      </div>
-
-      <div class="contact-text">
-
-        <div class="contact-label">
-          手機
-        </div>
-
-        <div class="contact-value">
-          0988-102039
-        </div>
-
-      </div>
-
-    </a>
-
-
-    <a
-      class="contact-item"
-      href="tel:0425335439">
-
-      <div class="contact-icon">
-        ☎️
-      </div>
-
-      <div class="contact-text">
-
-        <div class="contact-label">
-          潭子店
-        </div>
-
-        <div class="contact-value">
-          04-25335439
-        </div>
-
-      </div>
-
-    </a>
-
-
-    <a
-      class="contact-item"
-      href="tel:0425573968">
-
-      <div class="contact-icon">
-        ☎️
-      </div>
-
-      <div class="contact-text">
-
-        <div class="contact-label">
-          后里店
-        </div>
-
-        <div class="contact-value">
-          04-25573968
-        </div>
-
-      </div>
-
-    </a>
-
-  </section>
-
-
-  <!-- =========================
-       快速聯絡
-  ========================= -->
-
-  <section class="card">
-
-    <div class="card-title">
-      🚀 快速聯絡
-    </div>
-
-    <div class="button-grid">
-
-
-      <a
-        class="btn btn-line"
-        href="https://line.me/ti/p/KGjehjx9ge"
-        target="_blank">
-
-        💬 加 LINE 聯繫
-
-      </a>
-
-
-      <a
-        class="btn btn-phone"
-        href="tel:0988102039">
-
-        📞 立即電話
-
-      </a>
-
-
-      <a
-        class="btn btn-estimate"
-        href="https://line.me/ti/p/KGjehjx9ge"
-        target="_blank">
-
-        ☀️ 免費估價
-
-      </a>
-
-
-      <a
-        class="btn btn-website"
-        href="https://reurl.cc/6X98lk"
-        target="_blank">
-
-        🌐 官方網站
-
-      </a>
-
-
-      <a
-        class="btn btn-facebook"
-        href="https://reurl.cc/6X98lk"
-        target="_blank">
-
-        👍 Facebook
-
-      </a>
-
-
-      <a
-        class="btn btn-share"
-        href="javascript:void(0)"
-        onclick="shareCard()">
-
-        📤 分享名片
-
-      </a>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       服務項目
-  ========================= -->
-
-  <section class="card">
-
-    <div class="card-title">
-      ☀️ 專業服務
-    </div>
-
-
-    <div class="services">
-
-
-      <div class="service">
-
-        <div class="service-icon">
-          ☀️
-        </div>
-
-        <div class="service-title">
-          太陽能安裝
-        </div>
-
-        <div class="service-text">
-          新機規劃與安裝
-        </div>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-icon">
-          🔧
-        </div>
-
-        <div class="service-title">
-          故障維修
-        </div>
-
-        <div class="service-text">
-          熱水設備檢修
-        </div>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-icon">
-          🧰
-        </div>
-
-        <div class="service-title">
-          設備保養
-        </div>
-
-        <div class="service-text">
-          定期檢查與保養
-        </div>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-icon">
-          🏠
-        </div>
-
-        <div class="service-title">
-          到府估價
-        </div>
-
-        <div class="service-text">
-          現場評估規劃
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       公司介紹
-  ========================= -->
-
-  <section class="card">
-
-    <div class="card-title">
-      🏢 關於宸浚企業社
-    </div>
-
-    <div class="about">
-
-      <p>
-        <strong>宸浚企業社</strong>
-        專業提供太陽能熱水器相關服務。
-      </p>
-
-      <br>
-
-      <p>
-        從現場評估、設備規劃、安裝施工，
-        到後續維修與保養，
-        協助客戶找到適合家庭需求的熱水系統。
-      </p>
-
-      <br>
-
-      <p>
-        📍 服務地區：台中及周邊地區
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       施工案例
-  ========================= -->
-
-  <section class="card">
-
-    <div class="card-title">
-      📸 施工案例
-    </div>
-
-
-    <div class="case">
-
-      <img
         src="https://i.ibb.co/qMZQw2rB/logo.jpg"
-        alt="施工案例">
+        alt="宸浚企業社">
 
-      <div class="case-content">
+</div>
 
-        <div class="case-title">
-          ☀️ 太陽能熱水器施工
+
+<!-- =====================================================
+     BODY
+===================================================== -->
+
+<div class="body">
+
+
+<!-- =====================================================
+     姓名
+
+     完全對應：
+
+     type box
+     layout vertical
+     height 100px
+     borderWidth bold
+===================================================== -->
+
+<div class="name-box">
+
+    <div class="name">
+
+        王俊騰
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     公司資訊
+
+     #CCEEFF
+===================================================== -->
+
+<div class="company-box">
+
+
+    <!-- =================================================
+         Logo + 公司名稱
+    ================================================== -->
+
+    <div class="company-header">
+
+
+        <img
+            class="company-logo"
+            src="https://i.ibb.co/zWpPKR2w/SUNCUE.png"
+            alt="SUNCUE">
+
+
+        <div class="company-name">
+
+            宸浚企業社
+
         </div>
 
-        <div class="case-description">
-          專業規劃、安裝與施工服務。
-        </div>
-
-      </div>
 
     </div>
 
 
-    <a
-      class="btn btn-website"
-      href="https://reurl.cc/6X98lk"
-      target="_blank">
+    <!-- =================================================
+         分隔線
+    ================================================== -->
 
-      查看更多施工案例
+    <div class="separator-box">
 
-    </a>
-
-  </section>
-
-
-  <!-- =========================
-       分享
-  ========================= -->
-
-  <section class="card share-box">
-
-    <div class="share-title">
-      📤 把我的電子名片分享給朋友
-    </div>
-
-    <div class="share-text">
-
-      找太陽能熱水器、
-      維修或安裝需求，
-      歡迎轉傳給有需要的朋友。
+        <div class="separator"></div>
 
     </div>
 
 
-    <a
-      class="btn btn-share"
-      href="javascript:void(0)"
-      onclick="shareCard()">
+    <!-- =================================================
+         手機
+    ================================================== -->
 
-      📤 分享 LINE 電子名片
+    <div class="phone-box phone-1">
 
-    </a>
+        <a
+            class="phone"
+            href="tel:0988102039">
 
-  </section>
+            手機：0988-102039
 
+        </a>
 
-  <!-- =========================
-       SUNCUE
-  ========================= -->
-
-  <section class="card"
-           style="text-align:center;">
-
-    <img
-      src="https://i.ibb.co/zWpPKR2w/SUNCUE.png"
-      alt="SUNCUE"
-      style="
-        max-width:180px;
-        width:100%;
-      ">
-
-    <p
-      style="
-        margin-top:10px;
-        font-size:13px;
-        color:#777;
-      ">
-
-      點擊 Logo 前往官方網站
-
-    </p>
-
-    <br>
-
-    <a
-      class="btn btn-website"
-      href="https://www.suncue.tw/"
-      target="_blank">
-
-      🌐 SUNCUE 官方網站
-
-    </a>
-
-  </section>
+    </div>
 
 
-  <!-- =========================
-       Footer
-  ========================= -->
+    <!-- =================================================
+         潭子店
+    ================================================== -->
 
-  <footer>
+    <div class="phone-box phone-2">
 
-    © 2026 宸浚企業社<br>
+        <a
+            class="phone"
+            href="tel:0425335439">
 
-    王俊騰｜太陽能熱水器專業服務
+            市話：04-25335439 (潭子店)
 
-  </footer>
+        </a>
+
+    </div>
+
+
+    <!-- =================================================
+         后里店
+    ================================================== -->
+
+    <div class="phone-box phone-3">
+
+        <a
+            class="phone"
+            href="tel:0425573968">
+
+            市話：04-25573968 (后里店)
+
+        </a>
+
+    </div>
+
+
+    <!-- =================================================
+         聯絡按鈕
+
+         完全對應原本兩個 button
+    ================================================== -->
+
+    <div class="button-area">
+
+
+        <!-- 加 LINE -->
+
+        <a
+            class="action-button line-button"
+            href="https://line.me/ti/p/KGjehjx9ge"
+            target="_blank">
+
+            加 LINE 聯繫
+
+        </a>
+
+
+        <!-- 官方網站 -->
+
+        <a
+            class="action-button website-button"
+            href="https://reurl.cc/6X98lk"
+            target="_blank">
+
+            官方網站
+
+        </a>
+
+
+    </div>
 
 
 </div>
 
 
-<!-- =========================
-     固定底部按鈕
-========================= -->
-
-<div class="bottom-bar">
+</div>
 
 
-  <a
-    class="bottom-btn bottom-line"
-    href="https://line.me/ti/p/KGjehjx9ge"
-    target="_blank">
+<!-- =====================================================
+     FOOTER
 
-    💬 LINE
+     完全依照原本：
+     Facebook
+     分享
+     SUNCUE
+===================================================== -->
 
-  </a>
-
-
-  <a
-    class="bottom-btn bottom-phone"
-    href="tel:0988102039">
-
-    📞 電話
-
-  </a>
+<div class="footer">
 
 
-  <a
-    class="bottom-btn bottom-share"
-    href="javascript:void(0)"
-    onclick="shareCard()">
+    <!-- =================================================
+         Facebook
+    ================================================== -->
 
-    📤 分享
+    <a
+        class="facebook-area"
+        href="https://reurl.cc/6X98lk"
+        target="_blank">
 
-  </a>
+        <img
+            class="facebook"
+            src="https://i.ibb.co/Q3GkgjcX/facboo1.png"
+            alt="Facebook">
+
+    </a>
+
+
+    <!-- =================================================
+         分享
+    ================================================== -->
+
+    <div
+        class="share-area"
+        onclick="shareCard()">
+
+
+        <img
+            class="share-icon"
+            src="https://i.ibb.co/3YPf9FMZ/share.png"
+            alt="分享">
+
+
+        <div class="share-text">
+
+            分享
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =================================================
+         SUNCUE
+    ================================================== -->
+
+    <a
+        class="suncue-area"
+        href="https://www.suncue.tw/"
+        target="_blank">
+
+
+        <img
+            class="suncue-logo"
+            src="https://i.ibb.co/zWpPKR2w/SUNCUE.png"
+            alt="SUNCUE 官方網站">
+
+
+    </a>
+
+
+</div>
 
 
 </div>
@@ -1003,353 +891,615 @@
 
 <script>
 
-  /* =====================================================
-     LIFF 設定
-  ===================================================== */
+/* =========================================================
+   LIFF ID
+========================================================= */
 
-  const LIFF_ID =
+const LIFF_ID =
     "2011256691-gOnN4WiF";
 
 
-  /* =====================================================
-     Flex Message
-     分享出去的電子名片
-  ===================================================== */
+/* =========================================================
+   原本的 Flex Message
 
-  const flexMessage = {
+   不改內容
+========================================================= */
+
+const flexMessage = {
 
     type: "flex",
 
     altText:
-      "王俊騰｜宸浚企業社｜太陽能熱水器電子名片",
+        "王俊騰｜宸浚企業社｜電子名片",
 
     contents: {
 
-      type: "bubble",
-
-      hero: {
-
-        type: "image",
-
-        url:
-          "https://i.ibb.co/qMZQw2rB/logo.jpg",
-
-        size: "full",
-
-        aspectRatio: "60:11",
-
-        aspectMode: "cover"
-
-      },
+        type: "bubble",
 
 
-      body: {
+        hero: {
 
-        type: "box",
+            type: "image",
 
-        layout: "vertical",
+            url:
+                "https://i.ibb.co/qMZQw2rB/logo.jpg",
 
-        spacing: "md",
+            size: "full",
 
-        contents: [
+            aspectRatio: "60:11",
 
-          {
+            aspectMode: "cover",
 
-            type: "text",
+            gravity: "center"
 
-            text: "王俊騰",
-
-            size: "xxl",
-
-            weight: "bold",
-
-            align: "center"
-
-          },
-
-          {
-
-            type: "text",
-
-            text: "宸浚企業社",
-
-            size: "lg",
-
-            weight: "bold",
-
-            align: "center",
-
-            color: "#0066CC"
-
-          },
-
-          {
-
-            type: "text",
-
-            text:
-              "☀️ 太陽能熱水器專業服務",
-
-            align: "center",
-
-            margin: "sm"
-
-          },
+        },
 
 
-          {
+        body: {
 
-            type: "separator",
+            type: "box",
 
-            margin: "lg"
+            layout: "vertical",
 
-          },
+            contents: [
+
+                {
+
+                    type: "box",
+
+                    layout: "vertical",
+
+                    contents: [
+
+                        {
+
+                            type: "text",
+
+                            text: "王俊騰",
+
+                            size: "xxl",
+
+                            weight: "bold",
+
+                            align: "center",
+
+                            gravity: "center",
+
+                            offsetTop: "xxl",
+
+                            color: "#000000"
+
+                        }
+
+                    ],
+
+                    borderWidth: "bold",
+
+                    height: "100px"
+
+                },
 
 
-          {
+                {
 
-            type: "text",
+                    type: "box",
 
-            text:
-              "📱 0988-102039",
+                    layout: "vertical",
 
-            weight: "bold",
+                    contents: [
 
-            margin: "lg",
+                        {
 
-            action: {
+                            type: "box",
 
-              type: "uri",
+                            layout: "horizontal",
 
-              label: "撥打電話",
+                            contents: [
 
-              uri:
-                "tel:0988102039"
+                                {
+
+                                    type: "image",
+
+                                    url:
+                                        "https://i.ibb.co/zWpPKR2w/SUNCUE.png",
+
+                                    size: "xs",
+
+                                    align: "start",
+
+                                    gravity: "center"
+
+                                },
+
+                                {
+
+                                    type: "text",
+
+                                    text: "宸浚企業社",
+
+                                    align: "start",
+
+                                    gravity: "center",
+
+                                    size: "md",
+
+                                    offsetEnd: "55px",
+
+                                    weight: "bold"
+
+                                }
+
+                            ],
+
+                            height: "30px"
+
+                        },
+
+
+                        {
+
+                            type: "box",
+
+                            layout: "vertical",
+
+                            contents: [
+
+                                {
+
+                                    type: "separator",
+
+                                    margin: "md",
+
+                                    color: "#FFFFFF"
+
+                                }
+
+                            ],
+
+                            height: "20px"
+
+                        },
+
+
+                        {
+
+                            type: "box",
+
+                            layout: "vertical",
+
+                            contents: [
+
+                                {
+
+                                    type: "text",
+
+                                    text:
+                                        "手機：0988-102039",
+
+                                    weight: "bold",
+
+                                    action: {
+
+                                        type: "uri",
+
+                                        label: "撥打電話",
+
+                                        uri:
+                                            "tel:0988102039"
+
+                                    }
+
+                                }
+
+                            ],
+
+                            height: "30px"
+
+                        },
+
+
+                        {
+
+                            type: "box",
+
+                            layout: "vertical",
+
+                            contents: [
+
+                                {
+
+                                    type: "text",
+
+                                    text:
+                                        "市話：04-25335439 (潭子店)",
+
+                                    weight: "bold",
+
+                                    action: {
+
+                                        type: "uri",
+
+                                        label: "撥打電話",
+
+                                        uri:
+                                            "tel:0425335439"
+
+                                    }
+
+                                }
+
+                            ],
+
+                            height: "30px"
+
+                        },
+
+
+                        {
+
+                            type: "box",
+
+                            layout: "vertical",
+
+                            contents: [
+
+                                {
+
+                                    type: "text",
+
+                                    text:
+                                        "市話：04-25573968 (后里店)",
+
+                                    weight: "bold",
+
+                                    action: {
+
+                                        type: "uri",
+
+                                        label: "撥打電話",
+
+                                        uri:
+                                            "tel:0425573968"
+
+                                    }
+
+                                }
+
+                            ],
+
+                            height: "20px"
+
+                        }
+
+                    ],
+
+                    backgroundColor: "#CCEEFF",
+
+                    borderWidth: "10px",
+
+                    cornerRadius: "md"
+
+                },
+
+
+                {
+
+                    type: "box",
+
+                    layout: "horizontal",
+
+                    contents: [
+
+                        {
+
+                            type: "button",
+
+                            action: {
+
+                                type: "uri",
+
+                                label: "加 LINE 聯繫",
+
+                                uri:
+                                    "https://line.me/ti/p/KGjehjx9ge"
+
+                            },
+
+                            style: "primary",
+
+                            color: "#0044BB"
+
+                        },
+
+
+                        {
+
+                            type: "button",
+
+                            action: {
+
+                                type: "uri",
+
+                                label: "官方網站",
+
+                                uri:
+                                    "https://reurl.cc/6X98lk"
+
+                            },
+
+                            style: "primary",
+
+                            height: "md",
+
+                            margin: "md",
+
+                            color: "#003C9D"
+
+                        }
+
+                    ],
+
+                    offsetTop: "md",
+
+                    spacing: "md",
+
+                    margin: "none",
+
+                    offsetBottom: "md",
+
+                    paddingBottom: "md"
+
+                }
+
+            ],
+
+            spacing: "none"
+
+        },
+
+
+        footer: {
+
+            type: "box",
+
+            layout: "horizontal",
+
+            contents: [
+
+                {
+
+                    type: "box",
+
+                    layout: "horizontal",
+
+                    contents: [
+
+                        {
+
+                            type: "image",
+
+                            url:
+                                "https://i.ibb.co/Q3GkgjcX/facboo1.png",
+
+                            size: "xs",
+
+                            align: "start",
+
+                            offsetBottom: "11px",
+
+                            gravity: "top",
+
+                            action: {
+
+                                type: "uri",
+
+                                label: "Facebook",
+
+                                uri:
+                                    "https://reurl.cc/6X98lk"
+
+                            }
+
+                        }
+
+                    ],
+
+                    height: "60px"
+
+                },
+
+
+                {
+
+                    type: "box",
+
+                    layout: "horizontal",
+
+                    contents: [
+
+                        {
+
+                            type: "image",
+
+                            url:
+                                "https://i.ibb.co/3YPf9FMZ/share.png",
+
+                            size: "xxs",
+
+                            align: "start"
+
+                        },
+
+                        {
+
+                            type: "text",
+
+                            text: "分享",
+
+                            weight: "bold",
+
+                            align: "start",
+
+                            gravity: "center"
+
+                        }
+
+                    ],
+
+                    offsetEnd: "20px",
+
+                    action: {
+
+                        type: "uri",
+
+                        label: "分享",
+
+                        uri:
+                            "https://liff.line.me/2011256691-gOnN4WiF"
+
+                    }
+
+                },
+
+
+                {
+
+                    type: "box",
+
+                    layout: "vertical",
+
+                    contents: [
+
+                        {
+
+                            type: "image",
+
+                            url:
+                                "https://i.ibb.co/zWpPKR2w/SUNCUE.png",
+
+                            size: "md",
+
+                            offsetBottom: "25px",
+
+                            offsetEnd: "10px",
+
+                            gravity: "top",
+
+                            action: {
+
+                                type: "uri",
+
+                                label: "SUNCUE 官方網站",
+
+                                uri:
+                                    "https://www.suncue.tw/"
+
+                            }
+
+                        }
+
+                    ],
+
+                    width: "120px",
+
+                    offsetBottom: "5px"
+
+                }
+
+            ],
+
+            spacing: "xs",
+
+            height: "60px"
+
+        },
+
+
+        styles: {
+
+            footer: {
+
+                separatorColor: "#DDDDDD",
+
+                separator: true
 
             }
 
-          },
-
-
-          {
-
-            type: "text",
-
-            text:
-              "☎️ 潭子店：04-25335439",
-
-            margin: "md",
-
-            action: {
-
-              type: "uri",
-
-              label: "撥打電話",
-
-              uri:
-                "tel:0425335439"
-
-            }
-
-          },
-
-
-          {
-
-            type: "text",
-
-            text:
-              "☎️ 后里店：04-25573968",
-
-            margin: "md",
-
-            action: {
-
-              type: "uri",
-
-              label: "撥打電話",
-
-              uri:
-                "tel:0425573968"
-
-            }
-
-          }
-
-        ]
-
-      },
-
-
-      footer: {
-
-        type: "box",
-
-        layout: "vertical",
-
-        spacing: "sm",
-
-        contents: [
-
-          {
-
-            type: "button",
-
-            style: "primary",
-
-            color: "#06C755",
-
-            action: {
-
-              type: "uri",
-
-              label: "加 LINE 聯繫",
-
-              uri:
-                "https://line.me/ti/p/KGjehjx9ge"
-
-            }
-
-          },
-
-
-          {
-
-            type: "button",
-
-            style: "primary",
-
-            color: "#0066CC",
-
-            action: {
-
-              type: "uri",
-
-              label: "官方網站",
-
-              uri:
-                "https://reurl.cc/6X98lk"
-
-            }
-
-          },
-
-
-          {
-
-            type: "button",
-
-            style: "secondary",
-
-            action: {
-
-              type: "uri",
-
-              label: "分享電子名片",
-
-              uri:
-                "https://liff.line.me/2011256691-gOnN4WiF"
-
-            }
-
-          }
-
-        ]
-
-      }
+        }
 
     }
 
-  };
+};
 
 
-  /* =====================================================
-     分享功能
-  ===================================================== */
+/* =========================================================
+   分享功能
 
-  async function shareCard() {
+   與原本功能相同
+========================================================= */
+
+async function shareCard() {
 
     try {
 
-      document.body.style.cursor =
-        "wait";
+
+        /* 初始化 LIFF */
+
+        await liff.init({
+
+            liffId: LIFF_ID
+
+        });
 
 
-      /*
+        /* 尚未登入 */
 
-        如果不是在 LINE 裡面，
-        先初始化 LIFF。
+        if (!liff.isLoggedIn()) {
 
-      */
+            liff.login();
 
-      await liff.init({
+            return;
 
-        liffId: LIFF_ID
-
-      });
+        }
 
 
-      /*
-        如果尚未登入 LINE
-      */
+        /* 開啟 LINE 分享對象選擇器 */
 
-      if (!liff.isLoggedIn()) {
-
-        liff.login();
-
-        return;
-
-      }
+        const result =
+            await liff.shareTargetPicker([
+                flexMessage
+            ]);
 
 
-      /*
-        開啟分享對象選擇器
-      */
+        /* 分享成功 */
 
-      const result =
-        await liff.shareTargetPicker([
-          flexMessage
-        ]);
+        if (result) {
 
+            alert(
+                "電子名片分享成功！"
+            );
 
-      if (result) {
+        }
 
-        alert(
-          "電子名片分享成功！"
-        );
-
-      }
-
-
-    } catch (error) {
-
-      console.error(
-        "LIFF 分享錯誤：",
-        error
-      );
-
-
-      /*
-        如果瀏覽器不支援
-        LIFF 分享功能，
-        提示使用者。
-
-      */
-
-      alert(
-        "目前無法開啟 LINE 分享功能。\n\n" +
-        "請使用 LINE App 開啟此電子名片，" +
-        "再點擊「分享」按鈕。"
-      );
-
-    } finally {
-
-      document.body.style.cursor =
-        "default";
 
     }
 
-  }
+    catch (error) {
+
+        console.error(
+            "LIFF 錯誤：",
+            error
+        );
+
+
+        alert(
+            "LINE 分享發生錯誤。\n\n" +
+            "請確認您是從 LINE App 開啟此電子名片。"
+        );
+
+    }
+
+}
 
 </script>
 
@@ -1357,4 +1507,3 @@
 </body>
 
 </html>
-```
