@@ -1,129 +1,115 @@
-<!DOCTYPE html> <html lang="zh-Hant"> <head> <meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
+    <title>我的一頁式網站</title>
 
-<meta
-name="description"
-content="吳勝雄｜清水三久行｜台中市清水區高美路49號"
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<meta
-name="theme-color"
-content="#0044BB"
+        body {
+            font-family: Arial, "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
+        /* 首頁 */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
 
-  <!-- =================================
-       頂部 Logo
-       ================================= -->
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
 
-  <div class="hero">
+        .hero img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
 
-    <a
-      href="https://line.me/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
 
-      <img
-        src="https://i.ibb.co/1Y1ZZ9xq/logo.jpg"
-        alt="清水三久行"
-      >
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
 
-    </a>
+        /* 按鈕 */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
 
-  </div>
+        .btn:hover {
+            background: #0056b3;
+        }
 
+        /* 內容區 */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+        }
 
-  <!-- =================================
-       主要按鈕
-       ================================= -->
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
 
-  <div class="buttons">
+<body>
 
+    <!-- 首頁 -->
+    <section class="hero">
 
-    <!-- LINE -->
+        <!-- 圖片 -->
+        <img src="images/main.jpg" alt="網站主圖片">
 
-    <a
-      class="button line-button"
-      href="https://line.me/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      加 LINE 聯繫
-    </a>
+        <h1>我的一頁式網站</h1>
 
+        <p>
+            歡迎來到我的網站！
+        </p>
 
-    <!-- 官方網站 -->
+        <!-- 按鈕 -->
+        <a href="#about" class="btn">
+            了解更多
+        </a>
 
-    <a
-      class="button website-button"
-      href="https://line.me/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      官方網站
-    </a>
-
-  </div>
-
-
-  <!-- =================================
-       Footer
-       ================================= -->
-
-  <footer class="footer">
-
-
-    <!-- Facebook -->
-
-    <a
-      class="facebook"
-      href="#"
-      aria-label="Facebook"
-    >
-
-      <img
-        src="https://i.ibb.co/Q3GkgjcX/facboo1.png"
-        alt="Facebook"
-      >
-
-    </a>
-
-
-    <!-- 分享 -->
-
-    <button
-      class="share"
-      type="button"
-      onclick="sharePage()"
-    >
-
-      <img
-        src="https://i.ibb.co/3YPf9FMZ/share.png"
-        alt="分享"
-      >
-
-      <span>
-        分享
-      </span>
-
-    </button>
+    </section>
 
 
-    <!-- Logo -->
+    <!-- 關於我們 -->
+    <section id="about" class="section">
 
-    <div class="footer-logo">
+        <h2>關於我們</h2>
 
-      <img
-        src="https://i.ibb.co/zWpPKR2w/SUNCUE.png"
-        alt="清水三久行"
-      >
+        <p>
+            這裡可以放置你的網站介紹、個人介紹或公司資訊。
+        </p>
 
-    </div>
+    </section>
 
-  </footer>
-
-</main>
-
-</div> <!-- ================================= 分享提示 ================================= --> <div id="toast" class="toast" > 網址已複製！ </div> <!-- ================================= JavaScript ================================= --> <script> async function sharePage() { const shareData = { title: "吳勝雄｜清水三久行", text: "清水三久行｜吳勝雄", url: window.location.href }; /* 手機原生分享 */ if ( navigator.share && /Android|iPhone|iPad|iPod/i.test( navigator.userAgent ) ) { try { await navigator.share(shareData); } catch (error) { console.log("使用者取消分享"); } return; } /* 電腦或不支援原生分享 */ try { await navigator.clipboard.writeText( window.location.href ); showToast( "網址已複製，可以分享給朋友！" ); } catch (error) { /* Clipboard API 不支援時 */ const textarea = document.createElement("textarea"); textarea.value = window.location.href; document.body.appendChild( textarea ); textarea.select(); document.execCommand( "copy" ); document.body.removeChild( textarea ); showToast( "網址已複製，可以分享給朋友！" ); } } /* Toast */ function showToast(message) { const toast = document.getElementById("toast"); toast.textContent = message; toast.classList.add( "show" ); setTimeout( function () { toast.classList.remove( "show" ); }, 2500 ); } </script> </body> </html>
+</body>
+</html>
