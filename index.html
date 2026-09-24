@@ -1,927 +1,207 @@
-```html
-<!DOCTYPE html>
-<html lang="zh-TW">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>吳勝雄｜清水三久行｜電子名片</title>
-
-<style>
-
-/* =========================================================
-   基本設定
-========================================================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html,
-body {
-
-    width: 100%;
-
-    min-height: 100%;
-
-    background: #eeeeee;
-
-    font-family:
-        Arial,
-        "Microsoft JhengHei",
-        "Noto Sans TC",
-        sans-serif;
-
-    color: #000000;
-
-}
-
-
-/* =========================================================
-   主卡片
-========================================================= */
-
-.card {
-
-    width: 100%;
-
-    max-width: 500px;
-
-    margin: 0 auto;
-
-    background: #ffffff;
-
-    min-height: 100vh;
-
-}
-
-
-/* =========================================================
-   HERO
-
-   Flex:
-   aspectRatio: 60:11
-   size: full
-   aspectMode: cover
-   gravity: center
-========================================================= */
-
-.hero {
-
-    width: 100%;
-
-    aspect-ratio: 60 / 11;
-
-    overflow: hidden;
-
-    background: #ffffff;
-
-}
-
-.hero img {
-
-    width: 100%;
-
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    object-position: center;
-
-}
-
-
-/* =========================================================
-   BODY
-========================================================= */
-
-.body {
-
-    width: 100%;
-
-    background: #ffffff;
-
-}
-
-
-/* =========================================================
-   姓名
-
-   Flex:
-   height: 100px
-   borderWidth: bold
-========================================================= */
-
-.name-box {
-
-    width: 100%;
-
-    height: 100px;
-
-    border: 3px solid #000000;
-
-    background: #ffffff;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-}
-
-.name {
-
-    font-size: 32px;
-
-    font-weight: bold;
-
-    line-height: 1;
-
-    text-align: center;
-
-    transform: translateY(8px);
-
-}
-
-
-/* =========================================================
-   公司資訊
-
-   backgroundColor: #CCEEFF
-   borderWidth: 10px
-   cornerRadius: md
-========================================================= */
-
-.company-box {
-
-    width: 100%;
-
-    background: #CCEEFF;
-
-    border: 10px solid #CCEEFF;
-
-    border-radius: 10px;
-
-    overflow: hidden;
-
-}
-
-
-/* =========================================================
-   公司 Logo + 公司名稱
-
-   height: 30px
-========================================================= */
-
-.company-header {
-
-    width: 100%;
-
-    height: 30px;
-
-    display: flex;
-
-    flex-direction: row;
-
-    align-items: center;
-
-}
-
-
-/* SUNCUE Logo */
-
-.company-logo {
-
-    width: 45px;
-
-    height: 30px;
-
-    object-fit: contain;
-
-    object-position: left center;
-
-}
-
-
-/* 清水三久行 */
-
-.company-name {
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    line-height: 30px;
-
-    transform: translateX(-8px);
-
-}
-
-
-/* =========================================================
-   分隔線
-
-   height: 20px
-   color: #FFFFFF
-========================================================= */
-
-.separator-box {
-
-    width: 100%;
-
-    height: 20px;
-
-    display: flex;
-
-    align-items: center;
-
-}
-
-.separator {
-
-    width: 100%;
-
-    height: 1px;
-
-    background: #FFFFFF;
-
-}
-
-
-/* =========================================================
-   地址
-
-   height: 30px
-========================================================= */
-
-.info-box {
-
-    width: 100%;
-
-    height: 30px;
-
-    display: flex;
-
-    align-items: center;
-
-}
-
-.info {
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    color: #000000;
-
-    line-height: 1;
-
-}
-
-
-/* =========================================================
-   電話
-
-   height: 30px
-========================================================= */
-
-.phone-box {
-
-    width: 100%;
-
-    height: 30px;
-
-    display: flex;
-
-    align-items: center;
-
-}
-
-.phone {
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    color: #000000;
-
-    text-decoration: none;
-
-    line-height: 1;
-
-}
-
-
-/* =========================================================
-   按鈕區
-
-   Flex:
-   horizontal
-   offsetTop md
-   spacing md
-   offsetBottom md
-   paddingBottom md
-========================================================= */
-
-.button-area {
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: row;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding-top: 8px;
-
-    padding-bottom: 10px;
-
-}
-
-
-/* =========================================================
-   按鈕
-
-   Flex style primary
-========================================================= */
-
-.button {
-
-    flex: 1;
-
-    height: 45px;
-
-    border: none;
-
-    border-radius: 6px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: #ffffff;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-}
-
-
-/* =========================================================
-   加 LINE 聯繫
-
-   #0044BB
-========================================================= */
-
-.line-button {
-
-    background: #0044BB;
-
-}
-
-
-/* =========================================================
-   官方網站
-
-   #003C9D
-========================================================= */
-
-.website-button {
-
-    background: #003C9D;
-
-}
-
-
-/* =========================================================
-   FOOTER
-
-   height: 60px
-   separator #DDDDDD
-========================================================= */
-
-.footer {
-
-    width: 100%;
-
-    height: 60px;
-
-    border-top: 1px solid #DDDDDD;
-
-    background: #ffffff;
-
-    display: flex;
-
-    flex-direction: row;
-
-    align-items: center;
-
-}
-
-
-/* =========================================================
-   Facebook
-
-   對應第一個 footer box
-========================================================= */
-
-.facebook-area {
-
-    width: 25%;
-
-    height: 60px;
-
-    display: flex;
-
-    align-items: flex-start;
-
-    justify-content: center;
-
-    padding-top: 5px;
-
-}
-
-.facebook {
-
-    width: 32px;
-
-    height: 32px;
-
-    object-fit: contain;
-
-}
-
-
-/* =========================================================
-   分享
-
-   image + text
-========================================================= */
-
-.share-area {
-
-    width: 30%;
-
-    height: 60px;
-
-    display: flex;
-
-    flex-direction: row;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 5px;
-
-    cursor: pointer;
-
-    transform: translateX(-5px);
-
-}
-
-.share-icon {
-
-    width: 22px;
-
-    height: 22px;
-
-    object-fit: contain;
-
-}
-
-.share-text {
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    color: #000000;
-
-}
-
-
-/* =========================================================
-   SUNCUE
-
-   width: 120px
-========================================================= */
-
-.suncue-area {
-
-    width: 120px;
-
-    height: 60px;
-
-    margin-left: auto;
-
-    display: flex;
-
-    align-items: flex-start;
-
-    justify-content: center;
-
-    padding-right: 10px;
-
-}
-
-.suncue {
-
-    width: 120px;
-
-    height: auto;
-
-    max-height: 50px;
-
-    object-fit: contain;
-
-    object-position: center top;
-
-}
-
-
-/* =========================================================
-   手機尺寸
-========================================================= */
-
-@media (max-width: 400px) {
-
-    .name {
-
-        font-size: 30px;
-
+{
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://i.ibb.co/1Y1ZZ9xq/logo.jpg",
+    "size": "full",
+    "aspectRatio": "60:11",
+    "action": {
+      "type": "uri",
+      "uri": "https://line.me/"
+    },
+    "aspectMode": "cover",
+    "offsetTop": "none",
+    "margin": "none",
+    "gravity": "center"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "吳勝雄",
+            "size": "xxl",
+            "weight": "bold",
+            "align": "center",
+            "gravity": "center",
+            "offsetTop": "xxl"
+          }
+        ],
+        "borderWidth": "bold",
+        "height": "100px"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://i.ibb.co/zWpPKR2w/SUNCUE.png",
+                "size": "xs",
+                "align": "start",
+                "gravity": "center"
+              },
+              {
+                "type": "text",
+                "text": "清水三久行",
+                "align": "start",
+                "gravity": "center",
+                "size": "md",
+                "offsetEnd": "55px",
+                "weight": "bold"
+              }
+            ],
+            "height": "30px"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "separator",
+                "margin": "md",
+                "color": "#FFFFFF"
+              }
+            ],
+            "height": "20px"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "地址：台中市清水區高美路49號",
+                "weight": "bold"
+              }
+            ],
+            "height": "30px"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "電話：0915-330885",
+                "weight": "bold"
+              }
+            ],
+            "height": "30px"
+          }
+        ],
+        "backgroundColor": "#CCEEFF",
+        "borderWidth": "10px",
+        "cornerRadius": "md"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "加 LINE 聯繫",
+              "uri": "http://linecorp.com/"
+            },
+            "style": "primary",
+            "color": "#0044BB"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "官方網站",
+              "uri": "http://linecorp.com/"
+            },
+            "style": "primary",
+            "height": "md",
+            "margin": "md",
+            "color": "#003C9D"
+          }
+        ],
+        "offsetTop": "md",
+        "spacing": "md",
+        "margin": "none",
+        "offsetBottom": "md",
+        "paddingBottom": "md"
+      }
+    ],
+    "spacing": "none"
+  },
+  "footer": {
+    "type": "box",
+    "layout": "horizontal",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.ibb.co/Q3GkgjcX/facboo1.png",
+            "size": "xs",
+            "align": "start",
+            "offsetBottom": "10px",
+            "gravity": "top"
+          }
+        ],
+        "height": "60px"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.ibb.co/3YPf9FMZ/share.png",
+            "size": "xxs",
+            "align": "start"
+          },
+          {
+            "type": "text",
+            "text": "分享",
+            "weight": "bold",
+            "align": "start",
+            "gravity": "center"
+          }
+        ],
+        "offsetEnd": "20px"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.ibb.co/zWpPKR2w/SUNCUE.png",
+            "size": "md",
+            "offsetBottom": "25px",
+            "offsetEnd": "10px",
+            "gravity": "top"
+          }
+        ],
+        "width": "120px",
+        "offsetBottom": "5px"
+      }
+    ],
+    "spacing": "xs",
+    "height": "60px"
+  },
+  "styles": {
+    "footer": {
+      "separatorColor": "#DDDDDD",
+      "separator": true
     }
-
-    .info,
-    .phone {
-
-        font-size: 14px;
-
-    }
-
-    .company-name {
-
-        font-size: 15px;
-
-    }
-
-    .button {
-
-        font-size: 13px;
-
-    }
-
+  }
 }
-
-
-/* =========================================================
-   防止點擊反白
-========================================================= */
-
-* {
-
-    -webkit-tap-highlight-color: transparent;
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<div class="card">
-
-
-    <!-- =================================================
-         HERO
-    ================================================== -->
-
-    <div class="hero">
-
-        <a href="https://line.me/"
-           target="_blank">
-
-            <img
-                src="https://i.ibb.co/1Y1ZZ9xq/logo.jpg"
-                alt="清水三久行">
-
-        </a>
-
-    </div>
-
-
-    <!-- =================================================
-         BODY
-    ================================================== -->
-
-    <div class="body">
-
-
-        <!-- =============================================
-             姓名
-        ============================================== -->
-
-        <div class="name-box">
-
-            <div class="name">
-
-                吳勝雄
-
-            </div>
-
-        </div>
-
-
-        <!-- =============================================
-             公司資訊
-        ============================================== -->
-
-        <div class="company-box">
-
-
-            <!-- 公司 Logo + 名稱 -->
-
-            <div class="company-header">
-
-                <img
-                    class="company-logo"
-                    src="https://i.ibb.co/zWpPKR2w/SUNCUE.png"
-                    alt="SUNCUE">
-
-
-                <div class="company-name">
-
-                    清水三久行
-
-                </div>
-
-            </div>
-
-
-            <!-- 分隔線 -->
-
-            <div class="separator-box">
-
-                <div class="separator"></div>
-
-            </div>
-
-
-            <!-- 地址 -->
-
-            <div class="info-box">
-
-                <div class="info">
-
-                    地址：台中市清水區高美路49號
-
-                </div>
-
-            </div>
-
-
-            <!-- 電話 -->
-
-            <div class="phone-box">
-
-                <a
-                    class="phone"
-                    href="tel:0915330885">
-
-                    電話：0915-330885
-
-                </a>
-
-            </div>
-
-
-            <!-- =========================================
-                 按鈕
-            ========================================== -->
-
-            <div class="button-area">
-
-
-                <!-- 加 LINE 聯繫 -->
-
-                <a
-                    class="button line-button"
-                    href="http://linecorp.com/"
-                    target="_blank">
-
-                    加 LINE 聯繫
-
-                </a>
-
-
-                <!-- 官方網站 -->
-
-                <a
-                    class="button website-button"
-                    href="http://linecorp.com/"
-                    target="_blank">
-
-                    官方網站
-
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-    <!-- =================================================
-         FOOTER
-    ================================================== -->
-
-    <div class="footer">
-
-
-        <!-- =============================================
-             Facebook
-        ============================================== -->
-
-        <a
-            class="facebook-area"
-            href="#"
-            onclick="return false;">
-
-            <img
-                class="facebook"
-                src="https://i.ibb.co/Q3GkgjcX/facboo1.png"
-                alt="Facebook">
-
-        </a>
-
-
-        <!-- =============================================
-             分享
-        ============================================== -->
-
-        <div
-            class="share-area"
-            onclick="shareCard()">
-
-
-            <img
-                class="share-icon"
-                src="https://i.ibb.co/3YPf9FMZ/share.png"
-                alt="分享">
-
-
-            <div class="share-text">
-
-                分享
-
-            </div>
-
-
-        </div>
-
-
-        <!-- =============================================
-             SUNCUE
-        ============================================== -->
-
-        <a
-            class="suncue-area"
-            href="https://www.suncue.tw/"
-            target="_blank">
-
-
-            <img
-                class="suncue"
-                src="https://i.ibb.co/zWpPKR2w/SUNCUE.png"
-                alt="SUNCUE">
-
-
-        </a>
-
-
-    </div>
-
-
-</div>
-
-
-<script>
-
-/* =========================================================
-   分享電子名片
-
-   如果直接用一般瀏覽器，
-   優先使用手機原生分享功能。
-
-   如果手機不支援，
-   就複製目前網址。
-========================================================= */
-
-async function shareCard() {
-
-    const shareData = {
-
-        title:
-            "吳勝雄｜清水三久行",
-
-        text:
-            "吳勝雄｜清水三久行｜電子名片",
-
-        url:
-            window.location.href
-
-    };
-
-
-    /* 手機支援 Web Share */
-
-    if (
-        navigator.share &&
-        /Android|iPhone|iPad|iPod/i.test(
-            navigator.userAgent
-        )
-    ) {
-
-        try {
-
-            await navigator.share(
-                shareData
-            );
-
-            return;
-
-        }
-
-        catch (error) {
-
-            /* 使用者取消分享，不做任何事 */
-
-            if (
-                error.name ===
-                "AbortError"
-            ) {
-
-                return;
-
-            }
-
-        }
-
-    }
-
-
-    /* 不支援原生分享 */
-
-    try {
-
-        await navigator.clipboard.writeText(
-            window.location.href
-        );
-
-        alert(
-            "電子名片網址已複製！\n\n可以貼到 LINE 傳給朋友。"
-        );
-
-    }
-
-    catch (error) {
-
-        alert(
-            "請複製瀏覽器網址分享此電子名片。"
-        );
-
-    }
-
-}
-
-</script>
-
-
-</body>
-
-</html>
-```
