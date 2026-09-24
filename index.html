@@ -20,12 +20,24 @@
         }
 
         /* 首頁 */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+
+            background: #f5f5f5;
+            padding: 0px 0px;
+        }
+        
         .hero img {
             width: 400px;
-            height: 250px;
-            object-fit: contain;
-            border-radius: 20px;
-            margin-bottom: 30px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 0 30px 0;
         }
 
         .hero h1 {
