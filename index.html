@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>○○太陽能熱水器｜台中太陽能熱水器安裝・維修</title>
+
+  <meta name="description"
+        content="台中太陽能熱水器安裝、維修、保養與免費估價。提供專業施工、售後服務與到府評估。">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        Arial,
+        sans-serif;
+      background: #f5f7f8;
+      color: #263238;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Header ===== */
+
+    header {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,193,7,0.95),
+          rgba(255,152,0,0.95)
+        );
+      color: white;
+      padding: 55px 20px 70px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 17px;
+      opacity: 0.95;
+    }
+
+    /* ===== Main ===== */
+
+    .container {
+      width: min(92%, 900px);
+      margin: -35px auto 60px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    }
+
+    .card h2 {
+      font-size: 23px;
+      margin-bottom: 18px;
+      color: #37474f;
+    }
+
+    /* ===== Buttons ===== */
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .btn-line {
+      background: #06c755;
+      color: white;
+    }
+
+    .btn-phone {
+      background: #263238;
+      color: white;
+    }
+
+    .btn-google {
+      background: #4285f4;
+      color: white;
+    }
+
+    .btn-estimate {
+      background: #ff9800;
+      color: white;
+    }
+
+    /* ===== Services ===== */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .service {
+      padding: 20px;
+      background: #fff8e1;
+      border-radius: 15px;
+    }
+
+    .service .icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .service h3 {
+      margin-bottom: 5px;
+      color: #e65100;
+    }
+
+    /* ===== Cases ===== */
+
+    .cases {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .case {
+      overflow: hidden;
+      border-radius: 15px;
+      background: #f5f5f5;
+    }
+
+    .case img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-text {
+      padding: 15px;
+    }
+
+    .case-text h3 {
+      margin-bottom: 5px;
+    }
+
+    /* ===== FAQ ===== */
+
+    .faq {
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+    }
+
+    .faq:last-child {
+      border-bottom: none;
+    }
+
+    .faq strong {
+      display: block;
+      color: #e65100;
+      margin-bottom: 5px;
+    }
+
+    /* ===== Contact ===== */
+
+    .contact {
+      text-align: center;
+      background: #263238;
+      color: white;
+    }
+
+    .contact h2 {
+      color: white;
+    }
+
+    .contact p {
+      margin-bottom: 20px;
+    }
+
+    /* ===== Footer ===== */
+
+    footer {
+      text-align: center;
+      padding: 30px 20px 100px;
+      color: #78909c;
+      font-size: 14px;
+    }
+
+    /* ===== Mobile ===== */
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 45px 20px 60px;
+      }
+
+      header h1 {
+        font-size: 26px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .buttons,
+      .services,
+      .cases {
+        grid-template-columns: 1fr;
+      }
+
+      .case img {
+        height: 220px;
+      }
+    }
+
+    /* ===== Floating LINE Button ===== */
+
+    .floating-line {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #06c755;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+      z-index: 999;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Header ===== -->
+
+  <header>
+
+    <div class="logo">
+      ☀️
+    </div>
+
+    <h1>○○太陽能熱水器</h1>
+
+    <p>
+      台中地區｜安裝・維修・保養・免費估價
+    </p>
+
+  </header>
+
+
+  <main class="container">
+
+    <!-- ===== Contact Buttons ===== -->
+
+    <section class="card">
+
+      <h2>📱 聯絡我們</h2>
+
+      <div class="buttons">
+
+        <!-- 把下面 LINE 網址換成你的 LINE -->
+        <a
+          class="btn btn-line"
+          href="https://line.me/ti/p/你的LINEID"
+          target="_blank">
+          💬 加 LINE 諮詢
+        </a>
+
+        <!-- 把電話換成你的 -->
+        <a
+          class="btn btn-phone"
+          href="tel:0912345678">
+          📞 立即電話
+        </a>
+
+        <!-- 換成你的 Google 商家 -->
+        <a
+          class="btn btn-google"
+          href="https://www.google.com/maps/"
+          target="_blank">
+          📍 Google 地圖
+        </a>
+
+        <!-- 換成你的 LINE 或表單 -->
+        <a
+          class="btn btn-estimate"
+          href="https://line.me/ti/p/你的LINEID"
+          target="_blank">
+          ☀️ 免費估價
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===== About ===== -->
+
+    <section class="card">
+
+      <h2>🏠 關於我們</h2>
+
+      <p>
+        我們專業提供太陽能熱水器安裝、維修與保養服務，
+        服務台中及周邊地區。
+      </p>
+
+      <br>
+
+      <p>
+        從現場評估、設備規劃、安裝施工到售後服務，
+        由專業人員協助您選擇適合家庭需求的熱水系統。
+      </p>
+
+    </section>
+
+
+    <!-- ===== Services ===== -->
+
+    <section class="card">
+
+      <h2>🔧 我們提供的服務</h2>
+
+      <div class="services">
+
+        <div class="service">
+          <div class="icon">☀️</div>
+          <h3>太陽能安裝</h3>
+          <p>
+            依照房屋、屋頂及家庭用水需求規劃適合的設備。
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="icon">🔧</div>
+          <h3>故障維修</h3>
+          <p>
+            協助處理漏水、沒熱水、管路及相關設備問題。
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="icon">🧽</div>
+          <h3>設備保養</h3>
+          <p>
+            定期檢查設備與管路，維持正常使用狀態。
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="icon">🏠</div>
+          <h3>到府評估</h3>
+          <p>
+            依現場條件提供設備配置及施工建議。
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===== Cases ===== -->
+
+    <section class="card">
+
+      <h2>📸 施工案例</h2>
+
+      <div class="cases">
+
+        <div class="case">
+
+          <!-- 把圖片換成自己的 -->
+          <img
+            src="images/case1.jpg"
+            alt="台中太陽能熱水器施工案例">
+
+          <div class="case-text">
+
+            <h3>台中・北屯</h3>
+
+            <p>
+              透天住宅太陽能熱水器安裝。
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="case">
+
+          <img
+            src="images/case2.jpg"
+            alt="太陽能熱水器安裝案例">
+
+          <div class="case-text">
+
+            <h3>台中・太平</h3>
+
+            <p>
+              舊設備更新與管路施工。
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="case">
+
+          <img
+            src="images/case3.jpg"
+            alt="太陽能熱水器維修案例">
+
+          <div class="case-text">
+
+            <h3>台中・大里</h3>
+
+            <p>
+              熱水系統檢查與設備維修。
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="case">
+
+          <img
+            src="images/case4.jpg"
+            alt="太陽能熱水器施工">
+
+          <div class="case-text">
+
+            <h3>台中・豐原</h3>
+
+            <p>
+              住宅太陽能熱水系統施工。
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===== FAQ ===== -->
+
+    <section class="card">
+
+      <h2>❓ 常見問題</h2>
+
+      <div class="faq">
+
+        <strong>Q：陰天還有熱水嗎？</strong>
+
+        <p>
+          太陽能熱水系統會受到日照及天候影響，
+          實際熱水量會依季節、天氣及設備配置而有所不同。
+        </p>
+
+      </div>
+
+
+      <div class="faq">
+
+        <strong>Q：安裝前需要看現場嗎？</strong>
+
+        <p>
+          建議先確認屋頂空間、方向、管線及安裝條件，
+          才能規劃適合的設備。
+        </p>
+
+      </div>
+
+
+      <div class="faq">
+
+        <strong>Q：可以先詢價嗎？</strong>
+
+        <p>
+          可以，歡迎透過 LINE 傳送房屋照片及基本需求，
+          我們會協助初步了解狀況。
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===== CTA ===== -->
+
+    <section class="card contact">
+
+      <h2>☀️ 想了解適合自己的太陽能嗎？</h2>
+
+      <p>
+        歡迎加入 LINE，傳照片給我們，
+        先了解您的房屋狀況。
+      </p>
+
+      <a
+        class="btn btn-line"
+        href="https://line.me/ti/p/你的LINEID"
+        target="_blank">
+
+        💬 LINE 免費諮詢
+
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    © 2026 ○○太陽能熱水器｜台中地區服務
+
+  </footer>
+
+
+  <!-- ===== Floating LINE ===== -->
+
+  <a
+    class="floating-line"
+    href="https://line.me/ti/p/你的LINEID"
+    target="_blank"
+    aria-label="加入 LINE">
+
+    💬
+
+  </a>
+
+
+</body>
+</html>
