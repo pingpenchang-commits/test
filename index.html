@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-TW">
 
@@ -8,14 +9,7 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>王俊騰｜宸浚企業社｜電子名片</title>
-
-<!-- LINE LIFF SDK -->
-<script
-  charset="utf-8"
-  src="https://static.line-scdn.net/liff/edge/2/sdk.js">
-</script>
-
+<title>吳勝雄｜清水三久行｜電子名片</title>
 
 <style>
 
@@ -25,14 +19,16 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html,
 body {
 
-    margin: 0;
+    width: 100%;
 
-    padding: 0;
+    min-height: 100%;
 
     background: #eeeeee;
 
@@ -48,10 +44,10 @@ body {
 
 
 /* =========================================================
-   主畫面
+   主卡片
 ========================================================= */
 
-.page {
+.card {
 
     width: 100%;
 
@@ -68,11 +64,12 @@ body {
 
 /* =========================================================
    HERO
-   對應 Flex hero
 
-   aspectRatio = 60:11
-   size = full
-   aspectMode = cover
+   Flex:
+   aspectRatio: 60:11
+   size: full
+   aspectMode: cover
+   gravity: center
 ========================================================= */
 
 .hero {
@@ -119,8 +116,8 @@ body {
    姓名
 
    Flex:
-   borderWidth: bold
    height: 100px
+   borderWidth: bold
 ========================================================= */
 
 .name-box {
@@ -139,8 +136,6 @@ body {
 
     justify-content: center;
 
-    overflow: hidden;
-
 }
 
 .name {
@@ -149,14 +144,11 @@ body {
 
     font-weight: bold;
 
-    color: #000000;
+    line-height: 1;
 
     text-align: center;
 
-    line-height: 1;
-
-    transform:
-        translateY(8px);
+    transform: translateY(8px);
 
 }
 
@@ -164,10 +156,9 @@ body {
 /* =========================================================
    公司資訊
 
-   Flex:
-   backgroundColor #CCEEFF
-   borderWidth 10px
-   cornerRadius md
+   backgroundColor: #CCEEFF
+   borderWidth: 10px
+   cornerRadius: md
 ========================================================= */
 
 .company-box {
@@ -188,12 +179,12 @@ body {
 /* =========================================================
    公司 Logo + 公司名稱
 
-   Flex:
-   horizontal
-   height 30px
+   height: 30px
 ========================================================= */
 
 .company-header {
+
+    width: 100%;
 
     height: 30px;
 
@@ -206,7 +197,7 @@ body {
 }
 
 
-/* Logo */
+/* SUNCUE Logo */
 
 .company-logo {
 
@@ -221,7 +212,7 @@ body {
 }
 
 
-/* 公司名稱 */
+/* 清水三久行 */
 
 .company-name {
 
@@ -231,10 +222,7 @@ body {
 
     line-height: 30px;
 
-    margin-left: 0;
-
-    transform:
-        translateX(-8px);
+    transform: translateX(-8px);
 
 }
 
@@ -242,13 +230,13 @@ body {
 /* =========================================================
    分隔線
 
-   Flex:
-   height 20px
-   separator margin md
-   color #FFFFFF
+   height: 20px
+   color: #FFFFFF
 ========================================================= */
 
 .separator-box {
+
+    width: 100%;
 
     height: 20px;
 
@@ -270,67 +258,78 @@ body {
 
 
 /* =========================================================
-   電話
+   地址
 
-   第一、第二：
-   height 30px
-
-   第三：
-   height 20px
+   height: 30px
 ========================================================= */
 
-.phone-box {
+.info-box {
+
+    width: 100%;
+
+    height: 30px;
 
     display: flex;
 
     align-items: center;
 
-    width: 100%;
-
 }
 
-.phone-box.phone-1 {
-
-    height: 30px;
-
-}
-
-.phone-box.phone-2 {
-
-    height: 30px;
-
-}
-
-.phone-box.phone-3 {
-
-    height: 20px;
-
-}
-
-
-.phone {
-
-    color: #000000;
-
-    text-decoration: none;
+.info {
 
     font-size: 15px;
 
     font-weight: bold;
 
-    line-height: 1;
+    color: #000000;
 
-    display: block;
+    line-height: 1;
 
 }
 
 
 /* =========================================================
-   聯絡按鈕
+   電話
+
+   height: 30px
+========================================================= */
+
+.phone-box {
+
+    width: 100%;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+.phone {
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    color: #000000;
+
+    text-decoration: none;
+
+    line-height: 1;
+
+}
+
+
+/* =========================================================
+   按鈕區
 
    Flex:
    horizontal
+   offsetTop md
    spacing md
+   offsetBottom md
+   paddingBottom md
 ========================================================= */
 
 .button-area {
@@ -353,12 +352,12 @@ body {
 
 
 /* =========================================================
-   Button
+   按鈕
 
-   Flex primary
+   Flex style primary
 ========================================================= */
 
-.action-button {
+.button {
 
     flex: 1;
 
@@ -368,30 +367,28 @@ body {
 
     border-radius: 6px;
 
-    color: #ffffff;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
     display: flex;
 
     align-items: center;
 
     justify-content: center;
 
+    color: #ffffff;
+
     text-decoration: none;
 
-    cursor: pointer;
+    font-size: 14px;
+
+    font-weight: bold;
 
 }
 
 
-/* 原本：
-
+/* =========================================================
    加 LINE 聯繫
-   color #0044BB
-*/
+
+   #0044BB
+========================================================= */
 
 .line-button {
 
@@ -400,11 +397,11 @@ body {
 }
 
 
-/* 原本：
-
+/* =========================================================
    官方網站
-   color #003C9D
-*/
+
+   #003C9D
+========================================================= */
 
 .website-button {
 
@@ -416,10 +413,8 @@ body {
 /* =========================================================
    FOOTER
 
-   Flex:
-   horizontal
-   height 60px
-   spacing xs
+   height: 60px
+   separator #DDDDDD
 ========================================================= */
 
 .footer {
@@ -438,15 +433,13 @@ body {
 
     align-items: center;
 
-    position: relative;
-
 }
 
 
 /* =========================================================
    Facebook
 
-   原本 width 約由 box 決定
+   對應第一個 footer box
 ========================================================= */
 
 .facebook-area {
@@ -465,9 +458,6 @@ body {
 
 }
 
-
-/* Facebook 圖片 */
-
 .facebook {
 
     width: 32px;
@@ -482,7 +472,6 @@ body {
 /* =========================================================
    分享
 
-   原本：
    image + text
 ========================================================= */
 
@@ -504,11 +493,9 @@ body {
 
     cursor: pointer;
 
-    transform:
-        translateX(-5px);
+    transform: translateX(-5px);
 
 }
-
 
 .share-icon {
 
@@ -519,7 +506,6 @@ body {
     object-fit: contain;
 
 }
-
 
 .share-text {
 
@@ -533,10 +519,9 @@ body {
 
 
 /* =========================================================
-   SUNCUE Logo
+   SUNCUE
 
-   原本：
-   width 120px
+   width: 120px
 ========================================================= */
 
 .suncue-area {
@@ -545,26 +530,21 @@ body {
 
     height: 60px;
 
+    margin-left: auto;
+
     display: flex;
 
     align-items: flex-start;
 
     justify-content: center;
 
-    margin-left: auto;
-
-    padding-top: 0;
-
     padding-right: 10px;
 
 }
 
-
-.suncue-logo {
+.suncue {
 
     width: 120px;
-
-    max-width: 120px;
 
     height: auto;
 
@@ -589,6 +569,7 @@ body {
 
     }
 
+    .info,
     .phone {
 
         font-size: 14px;
@@ -601,7 +582,7 @@ body {
 
     }
 
-    .action-button {
+    .button {
 
         font-size: 13px;
 
@@ -611,13 +592,12 @@ body {
 
 
 /* =========================================================
-   防止手機點擊出現奇怪反白
+   防止點擊反白
 ========================================================= */
 
 * {
 
-    -webkit-tap-highlight-color:
-        transparent;
+    -webkit-tap-highlight-color: transparent;
 
 }
 
@@ -629,76 +609,145 @@ body {
 <body>
 
 
-<div class="page">
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<div class="hero">
-
-    <img
-        src="https://i.ibb.co/qMZQw2rB/logo.jpg"
-        alt="宸浚企業社">
-
-</div>
-
-
-<!-- =====================================================
-     BODY
-===================================================== -->
-
-<div class="body">
-
-
-<!-- =====================================================
-     姓名
-
-     完全對應：
-
-     type box
-     layout vertical
-     height 100px
-     borderWidth bold
-===================================================== -->
-
-<div class="name-box">
-
-    <div class="name">
-
-        王俊騰
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     公司資訊
-
-     #CCEEFF
-===================================================== -->
-
-<div class="company-box">
+<div class="card">
 
 
     <!-- =================================================
-         Logo + 公司名稱
+         HERO
     ================================================== -->
 
-    <div class="company-header">
+    <div class="hero">
+
+        <a href="https://line.me/"
+           target="_blank">
+
+            <img
+                src="https://i.ibb.co/1Y1ZZ9xq/logo.jpg"
+                alt="清水三久行">
+
+        </a>
+
+    </div>
 
 
-        <img
-            class="company-logo"
-            src="https://i.ibb.co/zWpPKR2w/SUNCUE.png"
-            alt="SUNCUE">
+    <!-- =================================================
+         BODY
+    ================================================== -->
+
+    <div class="body">
 
 
-        <div class="company-name">
+        <!-- =============================================
+             姓名
+        ============================================== -->
 
-            宸浚企業社
+        <div class="name-box">
+
+            <div class="name">
+
+                吳勝雄
+
+            </div>
+
+        </div>
+
+
+        <!-- =============================================
+             公司資訊
+        ============================================== -->
+
+        <div class="company-box">
+
+
+            <!-- 公司 Logo + 名稱 -->
+
+            <div class="company-header">
+
+                <img
+                    class="company-logo"
+                    src="https://i.ibb.co/zWpPKR2w/SUNCUE.png"
+                    alt="SUNCUE">
+
+
+                <div class="company-name">
+
+                    清水三久行
+
+                </div>
+
+            </div>
+
+
+            <!-- 分隔線 -->
+
+            <div class="separator-box">
+
+                <div class="separator"></div>
+
+            </div>
+
+
+            <!-- 地址 -->
+
+            <div class="info-box">
+
+                <div class="info">
+
+                    地址：台中市清水區高美路49號
+
+                </div>
+
+            </div>
+
+
+            <!-- 電話 -->
+
+            <div class="phone-box">
+
+                <a
+                    class="phone"
+                    href="tel:0915330885">
+
+                    電話：0915-330885
+
+                </a>
+
+            </div>
+
+
+            <!-- =========================================
+                 按鈕
+            ========================================== -->
+
+            <div class="button-area">
+
+
+                <!-- 加 LINE 聯繫 -->
+
+                <a
+                    class="button line-button"
+                    href="http://linecorp.com/"
+                    target="_blank">
+
+                    加 LINE 聯繫
+
+                </a>
+
+
+                <!-- 官方網站 -->
+
+                <a
+                    class="button website-button"
+                    href="http://linecorp.com/"
+                    target="_blank">
+
+                    官方網站
+
+                </a>
+
+
+            </div>
+
 
         </div>
 
@@ -707,183 +756,74 @@ body {
 
 
     <!-- =================================================
-         分隔線
+         FOOTER
     ================================================== -->
 
-    <div class="separator-box">
-
-        <div class="separator"></div>
-
-    </div>
+    <div class="footer">
 
 
-    <!-- =================================================
-         手機
-    ================================================== -->
-
-    <div class="phone-box phone-1">
+        <!-- =============================================
+             Facebook
+        ============================================== -->
 
         <a
-            class="phone"
-            href="tel:0988102039">
+            class="facebook-area"
+            href="#"
+            onclick="return false;">
 
-            手機：0988-102039
-
-        </a>
-
-    </div>
-
-
-    <!-- =================================================
-         潭子店
-    ================================================== -->
-
-    <div class="phone-box phone-2">
-
-        <a
-            class="phone"
-            href="tel:0425335439">
-
-            市話：04-25335439 (潭子店)
-
-        </a>
-
-    </div>
-
-
-    <!-- =================================================
-         后里店
-    ================================================== -->
-
-    <div class="phone-box phone-3">
-
-        <a
-            class="phone"
-            href="tel:0425573968">
-
-            市話：04-25573968 (后里店)
-
-        </a>
-
-    </div>
-
-
-    <!-- =================================================
-         聯絡按鈕
-
-         完全對應原本兩個 button
-    ================================================== -->
-
-    <div class="button-area">
-
-
-        <!-- 加 LINE -->
-
-        <a
-            class="action-button line-button"
-            href="https://line.me/ti/p/KGjehjx9ge"
-            target="_blank">
-
-            加 LINE 聯繫
+            <img
+                class="facebook"
+                src="https://i.ibb.co/Q3GkgjcX/facboo1.png"
+                alt="Facebook">
 
         </a>
 
 
-        <!-- 官方網站 -->
+        <!-- =============================================
+             分享
+        ============================================== -->
 
-        <a
-            class="action-button website-button"
-            href="https://reurl.cc/6X98lk"
-            target="_blank">
-
-            官方網站
-
-        </a>
+        <div
+            class="share-area"
+            onclick="shareCard()">
 
 
-    </div>
+            <img
+                class="share-icon"
+                src="https://i.ibb.co/3YPf9FMZ/share.png"
+                alt="分享">
 
 
-</div>
+            <div class="share-text">
 
+                分享
 
-</div>
+            </div>
 
-
-<!-- =====================================================
-     FOOTER
-
-     完全依照原本：
-     Facebook
-     分享
-     SUNCUE
-===================================================== -->
-
-<div class="footer">
-
-
-    <!-- =================================================
-         Facebook
-    ================================================== -->
-
-    <a
-        class="facebook-area"
-        href="https://reurl.cc/6X98lk"
-        target="_blank">
-
-        <img
-            class="facebook"
-            src="https://i.ibb.co/Q3GkgjcX/facboo1.png"
-            alt="Facebook">
-
-    </a>
-
-
-    <!-- =================================================
-         分享
-    ================================================== -->
-
-    <div
-        class="share-area"
-        onclick="shareCard()">
-
-
-        <img
-            class="share-icon"
-            src="https://i.ibb.co/3YPf9FMZ/share.png"
-            alt="分享">
-
-
-        <div class="share-text">
-
-            分享
 
         </div>
 
 
+        <!-- =============================================
+             SUNCUE
+        ============================================== -->
+
+        <a
+            class="suncue-area"
+            href="https://www.suncue.tw/"
+            target="_blank">
+
+
+            <img
+                class="suncue"
+                src="https://i.ibb.co/zWpPKR2w/SUNCUE.png"
+                alt="SUNCUE">
+
+
+        </a>
+
+
     </div>
-
-
-    <!-- =================================================
-         SUNCUE
-    ================================================== -->
-
-    <a
-        class="suncue-area"
-        href="https://www.suncue.tw/"
-        target="_blank">
-
-
-        <img
-            class="suncue-logo"
-            src="https://i.ibb.co/zWpPKR2w/SUNCUE.png"
-            alt="SUNCUE 官方網站">
-
-
-    </a>
-
-
-</div>
 
 
 </div>
@@ -892,536 +832,60 @@ body {
 <script>
 
 /* =========================================================
-   LIFF ID
+   分享電子名片
+
+   如果直接用一般瀏覽器，
+   優先使用手機原生分享功能。
+
+   如果手機不支援，
+   就複製目前網址。
 ========================================================= */
 
-const LIFF_ID =
-    "2011256691-gOnN4WiF";
+async function shareCard() {
 
+    const shareData = {
 
-/* =========================================================
-   原本的 Flex Message
+        title:
+            "吳勝雄｜清水三久行",
 
-   不改內容
-========================================================= */
+        text:
+            "吳勝雄｜清水三久行｜電子名片",
 
-const flexMessage = {
+        url:
+            window.location.href
 
-    type: "flex",
+    };
 
-    altText:
-        "王俊騰｜宸浚企業社｜電子名片",
 
-    contents: {
+    /* 手機支援 Web Share */
 
-        type: "bubble",
+    if (
+        navigator.share &&
+        /Android|iPhone|iPad|iPod/i.test(
+            navigator.userAgent
+        )
+    ) {
 
+        try {
 
-        hero: {
+            await navigator.share(
+                shareData
+            );
 
-            type: "image",
+            return;
 
-            url:
-                "https://i.ibb.co/qMZQw2rB/logo.jpg",
+        }
 
-            size: "full",
+        catch (error) {
 
-            aspectRatio: "60:11",
+            /* 使用者取消分享，不做任何事 */
 
-            aspectMode: "cover",
+            if (
+                error.name ===
+                "AbortError"
+            ) {
 
-            gravity: "center"
-
-        },
-
-
-        body: {
-
-            type: "box",
-
-            layout: "vertical",
-
-            contents: [
-
-                {
-
-                    type: "box",
-
-                    layout: "vertical",
-
-                    contents: [
-
-                        {
-
-                            type: "text",
-
-                            text: "王俊騰",
-
-                            size: "xxl",
-
-                            weight: "bold",
-
-                            align: "center",
-
-                            gravity: "center",
-
-                            offsetTop: "xxl",
-
-                            color: "#000000"
-
-                        }
-
-                    ],
-
-                    borderWidth: "bold",
-
-                    height: "100px"
-
-                },
-
-
-                {
-
-                    type: "box",
-
-                    layout: "vertical",
-
-                    contents: [
-
-                        {
-
-                            type: "box",
-
-                            layout: "horizontal",
-
-                            contents: [
-
-                                {
-
-                                    type: "image",
-
-                                    url:
-                                        "https://i.ibb.co/zWpPKR2w/SUNCUE.png",
-
-                                    size: "xs",
-
-                                    align: "start",
-
-                                    gravity: "center"
-
-                                },
-
-                                {
-
-                                    type: "text",
-
-                                    text: "宸浚企業社",
-
-                                    align: "start",
-
-                                    gravity: "center",
-
-                                    size: "md",
-
-                                    offsetEnd: "55px",
-
-                                    weight: "bold"
-
-                                }
-
-                            ],
-
-                            height: "30px"
-
-                        },
-
-
-                        {
-
-                            type: "box",
-
-                            layout: "vertical",
-
-                            contents: [
-
-                                {
-
-                                    type: "separator",
-
-                                    margin: "md",
-
-                                    color: "#FFFFFF"
-
-                                }
-
-                            ],
-
-                            height: "20px"
-
-                        },
-
-
-                        {
-
-                            type: "box",
-
-                            layout: "vertical",
-
-                            contents: [
-
-                                {
-
-                                    type: "text",
-
-                                    text:
-                                        "手機：0988-102039",
-
-                                    weight: "bold",
-
-                                    action: {
-
-                                        type: "uri",
-
-                                        label: "撥打電話",
-
-                                        uri:
-                                            "tel:0988102039"
-
-                                    }
-
-                                }
-
-                            ],
-
-                            height: "30px"
-
-                        },
-
-
-                        {
-
-                            type: "box",
-
-                            layout: "vertical",
-
-                            contents: [
-
-                                {
-
-                                    type: "text",
-
-                                    text:
-                                        "市話：04-25335439 (潭子店)",
-
-                                    weight: "bold",
-
-                                    action: {
-
-                                        type: "uri",
-
-                                        label: "撥打電話",
-
-                                        uri:
-                                            "tel:0425335439"
-
-                                    }
-
-                                }
-
-                            ],
-
-                            height: "30px"
-
-                        },
-
-
-                        {
-
-                            type: "box",
-
-                            layout: "vertical",
-
-                            contents: [
-
-                                {
-
-                                    type: "text",
-
-                                    text:
-                                        "市話：04-25573968 (后里店)",
-
-                                    weight: "bold",
-
-                                    action: {
-
-                                        type: "uri",
-
-                                        label: "撥打電話",
-
-                                        uri:
-                                            "tel:0425573968"
-
-                                    }
-
-                                }
-
-                            ],
-
-                            height: "20px"
-
-                        }
-
-                    ],
-
-                    backgroundColor: "#CCEEFF",
-
-                    borderWidth: "10px",
-
-                    cornerRadius: "md"
-
-                },
-
-
-                {
-
-                    type: "box",
-
-                    layout: "horizontal",
-
-                    contents: [
-
-                        {
-
-                            type: "button",
-
-                            action: {
-
-                                type: "uri",
-
-                                label: "加 LINE 聯繫",
-
-                                uri:
-                                    "https://line.me/ti/p/KGjehjx9ge"
-
-                            },
-
-                            style: "primary",
-
-                            color: "#0044BB"
-
-                        },
-
-
-                        {
-
-                            type: "button",
-
-                            action: {
-
-                                type: "uri",
-
-                                label: "官方網站",
-
-                                uri:
-                                    "https://reurl.cc/6X98lk"
-
-                            },
-
-                            style: "primary",
-
-                            height: "md",
-
-                            margin: "md",
-
-                            color: "#003C9D"
-
-                        }
-
-                    ],
-
-                    offsetTop: "md",
-
-                    spacing: "md",
-
-                    margin: "none",
-
-                    offsetBottom: "md",
-
-                    paddingBottom: "md"
-
-                }
-
-            ],
-
-            spacing: "none"
-
-        },
-
-
-        footer: {
-
-            type: "box",
-
-            layout: "horizontal",
-
-            contents: [
-
-                {
-
-                    type: "box",
-
-                    layout: "horizontal",
-
-                    contents: [
-
-                        {
-
-                            type: "image",
-
-                            url:
-                                "https://i.ibb.co/Q3GkgjcX/facboo1.png",
-
-                            size: "xs",
-
-                            align: "start",
-
-                            offsetBottom: "11px",
-
-                            gravity: "top",
-
-                            action: {
-
-                                type: "uri",
-
-                                label: "Facebook",
-
-                                uri:
-                                    "https://reurl.cc/6X98lk"
-
-                            }
-
-                        }
-
-                    ],
-
-                    height: "60px"
-
-                },
-
-
-                {
-
-                    type: "box",
-
-                    layout: "horizontal",
-
-                    contents: [
-
-                        {
-
-                            type: "image",
-
-                            url:
-                                "https://i.ibb.co/3YPf9FMZ/share.png",
-
-                            size: "xxs",
-
-                            align: "start"
-
-                        },
-
-                        {
-
-                            type: "text",
-
-                            text: "分享",
-
-                            weight: "bold",
-
-                            align: "start",
-
-                            gravity: "center"
-
-                        }
-
-                    ],
-
-                    offsetEnd: "20px",
-
-                    action: {
-
-                        type: "uri",
-
-                        label: "分享",
-
-                        uri:
-                            "https://liff.line.me/2011256691-gOnN4WiF"
-
-                    }
-
-                },
-
-
-                {
-
-                    type: "box",
-
-                    layout: "vertical",
-
-                    contents: [
-
-                        {
-
-                            type: "image",
-
-                            url:
-                                "https://i.ibb.co/zWpPKR2w/SUNCUE.png",
-
-                            size: "md",
-
-                            offsetBottom: "25px",
-
-                            offsetEnd: "10px",
-
-                            gravity: "top",
-
-                            action: {
-
-                                type: "uri",
-
-                                label: "SUNCUE 官方網站",
-
-                                uri:
-                                    "https://www.suncue.tw/"
-
-                            }
-
-                        }
-
-                    ],
-
-                    width: "120px",
-
-                    offsetBottom: "5px"
-
-                }
-
-            ],
-
-            spacing: "xs",
-
-            height: "60px"
-
-        },
-
-
-        styles: {
-
-            footer: {
-
-                separatorColor: "#DDDDDD",
-
-                separator: true
+                return;
 
             }
 
@@ -1429,72 +893,25 @@ const flexMessage = {
 
     }
 
-};
 
-
-/* =========================================================
-   分享功能
-
-   與原本功能相同
-========================================================= */
-
-async function shareCard() {
+    /* 不支援原生分享 */
 
     try {
 
+        await navigator.clipboard.writeText(
+            window.location.href
+        );
 
-        /* 初始化 LIFF */
-
-        await liff.init({
-
-            liffId: LIFF_ID
-
-        });
-
-
-        /* 尚未登入 */
-
-        if (!liff.isLoggedIn()) {
-
-            liff.login();
-
-            return;
-
-        }
-
-
-        /* 開啟 LINE 分享對象選擇器 */
-
-        const result =
-            await liff.shareTargetPicker([
-                flexMessage
-            ]);
-
-
-        /* 分享成功 */
-
-        if (result) {
-
-            alert(
-                "電子名片分享成功！"
-            );
-
-        }
-
+        alert(
+            "電子名片網址已複製！\n\n可以貼到 LINE 傳給朋友。"
+        );
 
     }
 
     catch (error) {
 
-        console.error(
-            "LIFF 錯誤：",
-            error
-        );
-
-
         alert(
-            "LINE 分享發生錯誤。\n\n" +
-            "請確認您是從 LINE App 開啟此電子名片。"
+            "請複製瀏覽器網址分享此電子名片。"
         );
 
     }
@@ -1507,3 +924,4 @@ async function shareCard() {
 </body>
 
 </html>
+```
